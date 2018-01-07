@@ -4,11 +4,7 @@
 <P>Un deuxième</P>
 <h2>Notre équipe</h2>
 <ul>
-    <li>Edwige</li>
-    <li>Joséphine</li>
-    <li>Omar</li>
-    <li>Samy</li>
-    <li>Quentin</li>
-    <li>Pierre</li>
+    <li>Zigfrid</li>
+    <li>Sofiane</li>
 </ul>
 </div>
