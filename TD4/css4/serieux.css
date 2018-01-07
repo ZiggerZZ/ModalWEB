@@ -1,0 +1,96 @@
+.avertissement {
+    color : red;
+    font-size: large;
+    font-weight:bold;
+    font-variant:small-caps;
+    font-style: italic
+}
+
+#sidebar{
+     position:fixed;
+     left: 0;
+     top: 0;
+     bottom: 0;
+}
+
+.gras{
+    color : red;
+    font-weight: bold
+}
+
+[class*="col-"].gris {
+    background-color: grey;
+    border:solid 1px white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+img.roundedImage{
+    overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+    margin-top : 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+.superstyle4{
+    background-color:whitesmoke; 
+    border:solid blue 5px;
+    text-align: center; 
+    padding:100px; 
+    margin:50px;}
+
+.classique4 {
+    border : solid black 2px; 
+    margin : 50px; 
+    padding : 15px;
+    h1{
+        color:red;
+        font-size: 150%;
+    }
+    h2{color : green;
+       font-size :120%}
+}
+
+.pourselogger{
+    background-color:whitesmoke; 
+    border:solid blue 5px;
+    text-align: center; 
+    padding:10px; 
+    margin:0px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.repere {
+    background-image : url("http://www.coloriages.fr/coloriages/coloriage-vetements.jpg");  
+    border : solid red 20px;
+}
+
+
+    h1{
+        color:red;
+        font-size:250%
+        
+    }
+
+    h2{
+        color:green;
+        font-size:170%;
+    }
+
+    h3{
+        color:blue;
+        font-size:140%
+    }
+
+    h4{
+        color:blueviolet;
+        font-size:120%
+    }
