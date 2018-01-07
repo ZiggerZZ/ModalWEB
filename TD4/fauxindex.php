@@ -49,26 +49,28 @@ if ((!(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'])) && isset($_GET["t
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav navbar-left">
-                        <?php foreach ($pages as $p) {
-                            //affpagemenu($p, $askedpage);
-                            affpagemenu($p);
-                        } ?>
-                                  <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quiz<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Créer un quiz</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Quiz existant</a></li>
-          </ul>
-        </li>
+                    <?php
+                    foreach ($pages as $p) {
+                        //affpagemenu($p, $askedpage);
+                        affpagemenu($p);
+                    }
+                    ?>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quiz<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Créer un quiz</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Quiz existant</a></li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                     <button type="button" href="index_LogIn.php" class="btn btn-default navbar-btn">Connexion</button>
                     <li> 
-<?php
-affichemoncompte($dbh);
-?>
+                        <?php
+                        affichemoncompte($dbh);
+                        ?>
 
                     </li>
                 </ul>
@@ -85,16 +87,16 @@ affichemoncompte($dbh);
             <h1 class="display-3">Bridge Training!</h1>
             <p><a class="btn btn-primary btn-lg" href="#" role="button">En savoir plus »</a></p>
             <p>Structure de base du site...</p>
-<?php
-echo "Authorized vaut ";
-var_dump($authorized);
-echo "S_SESSION vaut";
-var_dump($_SESSION);
-$session_existante = (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]);
-if ($session_existante) {
-    echo "Youpi, déjà loggé !";
-}
-?>
+            <?php
+            echo "Authorized vaut ";
+            var_dump($authorized);
+            echo "S_SESSION vaut";
+            var_dump($_SESSION);
+            $session_existante = (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]);
+            if ($session_existante) {
+                echo "Youpi, déjà loggé !";
+            }
+            ?>
         </div>
     </div>
 
@@ -102,20 +104,20 @@ if ($session_existante) {
 
     <div id="content">
         <div>
-<?php
-echo "<h1 style=\"text-align : center; color: red\";>";
-echo $pageTitle . "</h1>";
-if (!$pageexistante) {
-    //echo "Attention, la page que vos demandez n'existe pas ou ne vous est pas accessible.";
-}
-require("Contenus/content_$askedpage.php");
-?>
+            <?php
+            echo "<h1 style=\"text-align : center; color: red\";>";
+            echo $pageTitle . "</h1>";
+            if (!$pageexistante) {
+                //echo "Attention, la page que vos demandez n'existe pas ou ne vous est pas accessible.";
+            }
+            require("Contenus/content_$askedpage.php");
+            ?>
         </div>
 
     </div>
     <footer class="container"> 
-    <p>©Drakkès</p> </footer>
-    
+        <p>©Drakkès</p> </footer>
+
 
 
 
