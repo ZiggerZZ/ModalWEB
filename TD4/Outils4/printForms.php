@@ -11,7 +11,7 @@ function printLoginForm(){
             </div>
             <div class=\"input-group\">
                 <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-lock\"></i></span>
-                <input  type=\"password\" class=\"form-control\" name=\"mdp\" placeholder=\"Mot de passe\">
+                <input  type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Mot de passe\">
             </div>
             <p><input type=\"submit\" value=\"Valider\" /></p></form>
         </form> ";
@@ -19,7 +19,7 @@ function printLoginForm(){
    //echo "<div class=\"superstyle4\">Veuillez rentrer vos identifiants.";
    //echo "<form action=\"fauxindex.php?todo=login\" method=\"post\" >";
    //echo "<p>Login : <input type=\"text\" name=\"loogin\" placeholder=\"Username\" required/></p>";
-   //echo "<p>Mot de passe : <input type=\"password\" name=\"mdp\" placeholder=\"Password\" required/></p>";
+   //echo "<p>Mot de passe : <input type=\"password\" name=\"password\" placeholder=\"Password\" required/></p>";
    //echo " <p><input type=\"submit\" value=\"Valider\" /></p></form>";
    //echo '</div>';
    
