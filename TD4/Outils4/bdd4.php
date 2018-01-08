@@ -57,10 +57,10 @@ class User {
     }
     
     public static function creecompte($dbh, $login, $name, $surname, $password, $email) {
-        $query = "INSERT INTO `User` (`login`, `name`, `surname`, `password`, `email`) VALUES (?, ?, ?, ?, ?);";
+        $query = "INSERT INTO `User` (`login`, `name`, `surname`, `password`, `email`) VALUES (?, ?, ?, SHA1(?), ?);";
         $sth = $dbh->prepare($query);
         $sth->setFetchMode(PDO::FETCH_CLASS, 'User');
-        $sth->execute(array($login,$name,$surname,SHA1($password),$email));
+        $sth->execute(array($login,$name,$surname,$password,$email));
         
     }
     
