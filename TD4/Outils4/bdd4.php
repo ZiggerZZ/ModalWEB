@@ -18,6 +18,8 @@ class Database {
 
 }
 
+// Utile pour débogguer
+
 function affichetout($dbh) {
     $query = "SELECT * FROM `User` ORDER BY `name`";
     $sth = $dbh->prepare($query);
@@ -58,7 +60,7 @@ class User {
         $query = "INSERT INTO `User` (`login`, `name`, `surname`, `password`, `email`) VALUES (?, ?, ?, ?, ?);";
         $sth = $dbh->prepare($query);
         $sth->setFetchMode(PDO::FETCH_CLASS, 'User');
-        $sth->execute(array($login,$name,$surname,$password,$email));
+        $sth->execute(array($login,$name,$surname,SHA1($password),$email));
         
     }
     
