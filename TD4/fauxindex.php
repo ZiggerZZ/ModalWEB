@@ -1,4 +1,5 @@
 <?php
+session_name("Bridgeur Pro");
 session_start();
 require ("Outils4/logInOut.php");
 require_once ("Outils4/printForms.php");
@@ -12,15 +13,22 @@ if (!isset($_SESSION['initiated'])) {
     session_regenerate_id();
     $_SESSION['initiated'] = true;
 }
+print_r($_SESSION);  //debogguage
 
 if (isset($_GET["todo"]) && $_GET["todo"] == "logout") {
     $_SESSION["loggedIn"] = False;
 }
 
-generateHTMLHeader("Formulaire", "css4/serieux.css");
+generateHTMLHeader("Formulaire", "css4/serieux.css");  // A JARTER !!!!!!
 echo "<link href=\"css4/bootstrap.css\" rel=\"stylesheet\">";
-echo '<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>';
-echo '<script type="text/javascript" src="js/code.js"></script>';
+echo '<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>'; /// A JARTE !!!!
+echo '<script type="text/javascript" src="js/code.js"></script>'; /// IDEMMMMMMMM !!!!
+
+
+if ((!(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'])) && isset($_GET["todo"]) && $_GET["todo"] == "login") {
+    logIn($dbh);
+}
+
 
 $param = recupereParametre($_GET, "page", $pages, "welcome");
 $pageexistante = $param["existe"];
@@ -34,9 +42,9 @@ if ($authorized) {
 }
 
 
-if ((!(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'])) && isset($_GET["todo"]) && $_GET["todo"] == "login") {
-    logIn($dbh);
-}
+//if ((!(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'])) && isset($_GET["todo"]) && $_GET["todo"] == "login") {
+//    logIn($dbh);
+//}
 ?>
 <div class="container-fluid">
     <div class="navbar navbar-default ">

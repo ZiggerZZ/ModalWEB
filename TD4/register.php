@@ -6,7 +6,7 @@ require_once 'Outils4/utils.php';
 require_once 'Outils4/printForms.php';
 require_once 'Outils4/bdd4.php';
 if (!isset($dbh)){$dbh = Database::connect();}
-generateHTMLHeader("S'enregistrer", "css4/serieux.css");
+generateHTMLHeader("S'enregistrer", "css4/serieux.css"); // à modifier je m'en fous de "serieux"
 
 echo '<link href="css4/bootstrap.css" rel="stylesheet">';
 
@@ -15,7 +15,10 @@ if (!isset($_SESSION['initiated'])) {
     $_SESSION['initiated'] = true;
 }
 
+//$form_values permet d'avoir 1 seule page pour le formulaire et le traitement de ses résultats
+
 $form_values_valid = False;
+
 $login = recupereParametre($_POST, "login", 1, "")["valeur"];
 $password = recupereParametre($_POST, "password", 1, "")["valeur"];
 $surname = recupereParametre($_POST, "surname", 1, "")["valeur"];
@@ -31,6 +34,7 @@ if (isset($_POST["login"]) && $_POST["login"] != "") {// && isset($_POST["email"
         $_SESSION["loogin"]=$login;
     } else { echo "<div class=\"superstyle4\">Ce login est déjà utilisé :( </div>";}
 }
-//what is that?
+//
 if (!$form_values_valid) { affiche_formulaire($surname, $name, $email);} 
+
 generateHTMLFooter();
