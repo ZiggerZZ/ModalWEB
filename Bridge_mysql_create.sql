@@ -185,3 +185,6 @@ INSERT INTO `Bid` (`bid_id`, `suit`, `level`, `name`) VALUES
 (36, 'pass', '-', 0),
 (37, 'double', '-', 0),
 (38, 'redouble', '-', 0);
+INSERT INTO `User` (`login`, `name`, `surname`, `password`, `email`) VALUES
+('Olivier', 'Olivier', 'Serre', SHA1('lapin'), 'olivier.serre@polytechnique.bridge'),
+('Dominique', 'Dominique', 'Rossin', SHA1('renard'), 'dominique.rossin@polytechnique.bridge');
